@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { ContactList } from "./components/ContactList";
+import { SearchFilter } from "./components/SearchFilter";
+import { Title } from "./components/Title";
+import { FetchUsers } from "./helper/apiCall";
 
-function App() {
+const App = () => {
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    FetchUsers().then((data) => setContacts(data.results));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="container">
+        {/* title section */}
+        <Title />
+
+        {/* search and filter section */}
+        <SearchFilter />
+        <hr />
+        {/* user count */}
+        <div className="row">
+          <div className="col">55 User Found</div>
+        </div>
+        {/* contact list cards */}
+        <ContactList users={contacts} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
