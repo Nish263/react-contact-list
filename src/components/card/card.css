@@ -7,3 +7,7 @@ i {
   justify-content: center;
   align-items: center;
 }
+
+.card {
+  background: rgb(244, 234, 219);
+}

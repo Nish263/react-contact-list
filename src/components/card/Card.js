@@ -3,8 +3,8 @@ import "./card.css";
 
 export const Card = ({ usr }) => {
   return (
-    <div className="col-md-6 col-lg-3 py-3">
-      <div className="card">
+    <div className="col-md-6 col-lg-3 py-3 ">
+      <div className="card border-2 border-danger ">
         <img src={usr.picture.large} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">
