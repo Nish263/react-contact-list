@@ -1,5 +1,5 @@
 import Axios from "axios";
 const apiUrl = "https://randomuser.me/api/?";
-export const FetchUsers = () => {
-  return Axios.get(apiUrl).then((res) => res.data);
+export const FetchUsers = (args = "results=20") => {
+  return Axios.get(apiUrl + args).then((res) => res.data);
 };

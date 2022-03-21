@@ -1,0 +1,9 @@
+i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(115, 205, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
